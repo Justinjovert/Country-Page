@@ -1,0 +1,45 @@
+:root {
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Nunito Sans', sans-serif, Arial, Helvetica;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+[data-theme='light']{
+  --bg-color: #F5F5F5;
+  --text-color: black;
+  --accent: '#E0E0E0';
+}
+
+[data-theme='dark']{
+  --bg-color: #1c1d1f;
+  --text-color: white;
+  --accent: #282b30;
+}
+
+
+@custom-variant dark (&:where(.dark, .dark *));
