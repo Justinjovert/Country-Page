@@ -7,7 +7,7 @@ import useLocalStorage from 'use-local-storage'
 function App() {
 
 
-  const [theme, setTheme] = useLocalStorage('isDark', false)
+  const [theme, setTheme] = useLocalStorage('isDark', true)
 
   useEffect(() => {
     if (theme) {

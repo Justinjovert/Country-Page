@@ -70,7 +70,7 @@ function CountryDetail() {
                 setDetails(null)
                 setError(true)
                 setTimeout(() => {
-                    navigate('/')
+                    navigate('/country-page/')
                 }, 2000)
             }
         }

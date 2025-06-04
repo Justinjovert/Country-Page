@@ -4,15 +4,15 @@ import SkeletonLoading from '../SkeletonLoading'
 import SideOptions from './SideOptions'
 import CountryTable from './CountryTable'
 import { useSearchParams } from 'react-router'
-
+import Search from '/assets/Search.svg'
 
 // Sort function
 const sortFunction = (data, sortValue) => {
     switch (sortValue) {
         case 'Population':
-            return data.sort((a, b) => a.population < b.population)
+            return data.sort((a, b) => b.population - a.population)
         case 'Area':
-            return data.sort((a, b) => a.area < b.area)
+            return data.sort((a, b) => b.area - a.area)
         case 'Name':
             return data.sort((a, b) => a.name.localeCompare(b.name))
         case 'Region':
@@ -162,7 +162,7 @@ function HomePage() {
 
                 <div className='grow-1 min-w-[280px] max-w-full sm:max-w-[400px] my-4 items-center relative'>
                     <div className='absolute top-[7px] left-1.5 w-[25px] h-[25px]'>
-                        <img src="/assets/Search.svg" alt="search" className='w-full h-full' />
+                        <img src={Search} alt="search" className='w-full h-full' />
                     </div>
                     <input value={search} onChange={handleInput} className='box-border p-2 pl-8 rounded-[8px] focus:outline-0 focus:border-1 focus:border-blue-500 hover:border-blue-500 w-full bg-[#F3F3F3] dark:bg-[#282b30] border-1 dark:border-0 border-[#3f3f3f] items-center placeholder:text-black dark:placeholder:text-white text-black dark:text-white'
                         placeholder='Search by Name, Region, Subregion' />

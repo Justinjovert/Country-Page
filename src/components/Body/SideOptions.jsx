@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import DoneIcon from '/assets/Done_round.svg'
+import ExpandDown from '/assets/Expand_down.svg'
 
 
 const sortArray = ['Area', 'Name', 'Population', 'Region']
@@ -41,7 +43,7 @@ function SideOptions({ isUNMember, isIND, handleIndependentCheck, sortValue, set
                             {sortValue}
                         </span>
                         <div>
-                            <img src="/assets/Expand_down.svg" alt="dropdown" />
+                            <img src={ExpandDown} alt="dropdown" />
                         </div>
                     </div>
                     {   // Dropdown
@@ -75,14 +77,14 @@ function SideOptions({ isUNMember, isIND, handleIndependentCheck, sortValue, set
                         <input checked={isUNMember} onChange={handleIndependentCheck} id='UNMember' type='checkbox' className='peer relative appearance-none cursor-pointer mr-2 w-6 h-6 rounded-[6px] border-2 border-gray-500 bg-transparent hover:border-blue-600 checked:bg-transparent checked:border-blue-600 z-10' />
                         <label htmlFor='UNMember' className='cursor-pointer select-none'>Member of the United Nations</label>
                         <div className='hidden peer-checked:block absolute bg-blue-600 rounded-[6px] '>
-                            <img src='assets/Done_round.svg' alt='checkbox' className='w-full h-full' />
+                            <img src={DoneIcon} alt='checkbox' className='w-full h-full' />
                         </div>
                     </div>
                     <div className='flex items-center'>
                         <input checked={isIND} onChange={handleIndependentCheck} id='independent' type='checkbox' className='peer relative appearance-none cursor-pointer mr-2 w-6 h-6 rounded-[6px] border-2 border-gray-500 bg-transparent hover:border-blue-600 checked:bg-transparent checked:border-blue-600 z-10' />
                         <label htmlFor='independent' className='cursor-pointer select-none'>Independent</label>
                         <div className='hidden peer-checked:block absolute bg-blue-600 rounded-[6px] '>
-                            <img src='assets/Done_round.svg' alt='checkbox' className='w-full h-full' />
+                            <img src={DoneIcon} alt='checkbox' className='w-full h-full' />
                         </div>
                     </div>
                 </div>
